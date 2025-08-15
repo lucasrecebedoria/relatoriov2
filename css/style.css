@@ -1,0 +1,128 @@
+:root{
+  --green:#00ff66; --panel: rgba(0,0,0,0.6); --text:#eaeaea; --border:#1aff7a;
+}
+*{box-sizing:border-box}html,body{height:100%}
+body{margin:0;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color:var(--text);
+  background:
+    linear-gradient(180deg,#080808 0%, #0f0f0f 40%, #161616 100%),
+    url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"28\" height=\"28\"><defs><pattern id=\"c\" patternUnits=\"userSpaceOnUse\" width=\"28\" height=\"28\" patternTransform=\"skewX(-20)\"><rect width=\"28\" height=\"28\" fill=\"%23111111\"/><path d=\"M0 14 h28\" stroke=\"%23262626\" stroke-width=\"6\"/></pattern></defs><rect width=\"100%\" height=\"100%\" fill=\"url(%23c)\"/></svg>');
+  background-blend-mode: overlay;}
+header{display:flex;justify-content:space-between;align-items:center;padding:16px 24px;border-bottom:2px solid var(--border);
+  background:linear-gradient(180deg,#0e0e0e,#0b0b0b);position:sticky;top:0;z-index:10}
+header h1{margin:0;font-weight:800;letter-spacing:.5px}
+.badge{display:inline-block;padding:2px 8px;border:1px solid var(--border);border-radius:999px;margin-left:8px;color:var(--green)}
+.container{max-width:980px;margin:0 auto;padding:20px}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:16px;margin:10px 0;box-shadow:0 8px 24px rgba(0,0,0,.35)}
+input,select,textarea,button{border-radius:12px;border:1px solid var(--border);background:rgba(0,0,0,.35);color:var(--text);padding:10px 12px}
+input:focus,select:focus,textarea:focus{outline:none;box-shadow:0 0 0 3px rgba(0,255,102,.2)}
+button{cursor:pointer;font-weight:700;transition:.25s;background:linear-gradient(180deg,#0f0f0f,#141414);color:#00ff66}
+button:hover{filter:brightness(1.2)}
+.row{display:flex;gap:10px;flex-wrap:wrap}.row > *{flex:1 1 220px}
+.report{border:1px solid var(--border);border-radius:14px;padding:12px;background:rgba(0,0,0,.5);margin:10px 0}
+.report .head{display:flex;align-items:center;gap:8px;justify-content:space-between}
+.report .meta{opacity:.9;font-size:.95rem}.hidden{display:none}
+.alert{color:#ff4d4d;font-weight:800;margin-left:8px}
+hr{border:none;border-top:1px solid #2a2a2a;margin:16px 0}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:9999}
+.popup{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:min(680px,92vw);max-height:85vh;overflow:auto;background:#121212;border:2px solid var(--border);border-radius:16px;padding:16px;z-index:10000;text-align:center}
+.popup h3{margin-top:0}.popup textarea{width:100%;min-height:140px;background:#1a1a1a}
+.thumb{display:flex;align-items:center;gap:8px;margin:6px 0}
+.thumb img{width:84px;height:64px;object-fit:cover;border:1px solid var(--border);border-radius:8px}
+.actions{display:flex;gap:8px;flex-wrap:wrap}
+.kbd{font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, \"Liberation Mono\", monospace;font-size:.85rem;padding:0 6px;border:1px solid #2f2f2f;border-radius:6px;background:#0e0e0e}
+.chip{display:inline-block;padding:4px 10px;border:1px solid var(--border);border-radius:999px;margin:4px 6px 0 0}.group{cursor:pointer}.group:hover{filter:brightness(1.15)}
+.small{font-size:.9rem;opacity:.9}
+
+/* ===== Tema Cromado e Carbono ===== */
+
+body {
+    background: radial-gradient(circle at center, #2c2c2c, #1a1a1a);
+    background-attachment: fixed;
+    color: #e0e0e0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+input, textarea, select {
+    background: linear-gradient(145deg, #d4d4d4, #f5f5f5);
+    border: 2px solid #c0c0c0;
+    border-radius: 6px;
+    box-shadow: inset -2px -2px 5px rgba(255,255,255,0.6),
+                inset 2px 2px 5px rgba(0,0,0,0.3);
+    
+    padding: 8px;
+    font-weight: bold;
+}
+
+button {
+    background: linear-gradient(145deg, #f0f0f0, #b0b0b0);
+    border: 2px solid #999;
+    border-radius: 8px;
+    color: #111;
+    font-weight: bold;
+    padding: 10px 20px;
+    box-shadow: -3px -3px 6px rgba(255,255,255,0.6),
+                3px 3px 6px rgba(0,0,0,0.3);
+    transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+    background: linear-gradient(145deg, #ffffff, #c0c0c0);
+    transform: scale(1.05);
+}
+
+h1, h2, h3, label {
+    background: linear-gradient(to right, #f0f0f0, #a0a0a0, #f0f0f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#pos-conferencia, .pos-conferencia { color: #fff !important; }
+
+.pos-conferencia ::placeholder,
+#pos-conferencia ::placeholder {
+    color: #fff !important;
+    opacity: 1; /* Para garantir que fique totalmente visível */
+}
+
+#posObsField {
+    color: #fff !important;
+    background-color: #333 !important;
+}
+#posObsField::placeholder {
+    color: #fff !important;
+    opacity: 1;
+}
+
+/* Força cor branca no campo de Pós Conferência, inclusive em WebKit/Chromium */
+#posObsField,
+.popup textarea#posObsField {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    caret-color: #ffffff !important;
+    background-color: #333333 !important;
+}
+
+.popup textarea,
+.popup textarea::placeholder {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    caret-color: #ffffff !important;
+}
+
+
+/* Forçar branco em campos dentro de popups e no campo de pós conferência */
+.popup textarea,
+.popup input,
+#posObsField {
+  color:#fff !important;
+  -webkit-text-fill-color:#fff !important;
+  caret-color:#fff !important;
+}
+
+
+/* Cor branca apenas para o campo Obs pós conferência */
+#posObsField {
+  color:#fff !important;
+  -webkit-text-fill-color:#fff !important;
+  caret-color:#fff !important;
+}
